@@ -9,7 +9,33 @@ class Choose(enum.Enum):
     SECOND_ITEM='second_item'
     THIRD_ITEM='third_item'
 
-class cls():
+class ResourcePath:
+    def __init__(self, module_type:str, node_name:str):
+        """
+        Describes a resrouce path used for annotations.
+
+        Arguments
+        ---
+        `module_type` - The node type that it should except.
+
+        `node_name` - The node name that is should except.
+
+        Methods
+        ---
+        exists
+        """
+        self.module_type = module_type
+        self.node_name = node_name
+
+    # TODO
+    def exists(self) -> bool:
+        """
+        Checks if this resource path exists
+        """
+        raise NotImplementedError()
+    
+
+class cls:
     """cls desc"""
     def __init__(self, string:str=None, integer:int=None, float:float=None):
         pass
@@ -23,7 +49,7 @@ def func2(value:str, **kw:cls):
     pass
 
 # **kw "additionalProperties": true
-def func1(enum: Choose, bytes:bytes, string:str, integer:int, float:float, vec:Vector, tuple:list[str,int], array:list[str|int], both:str|cls, object:cls, func:func2):
+def func1(enum: Choose, path:ResourcePath, bytes:bytes, string:str, integer:int, float:float, vec:Vector, tuple:list[str,int], array:list[str|int], both:str|cls, object:cls, func:func2):
     pass
 
 dat = schemaser.to_schema(func1)

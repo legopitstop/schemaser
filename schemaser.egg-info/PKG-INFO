@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: schemaser
-Version: 1.0.0
+Version: 1.0.1
 Summary: Converts a Python class or method to a JSON schema.
 Home-page: https://github.com/legopitstop/schemaser
 Author: Legopitstop
@@ -15,6 +15,7 @@ Classifier: Operating System :: Microsoft :: Windows
 Classifier: Programming Language :: Python :: 3.9
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
+License-File: LICENSE
 
 # schemaser
 Converts a Python class or method to a JSON schema.

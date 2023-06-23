@@ -7,7 +7,7 @@ required_modules = []
 
 setuptools.setup(
     name='schemaser',
-    version='1.0.0',
+    version='1.0.1',
     author='Legopitstop',
     description='Converts a Python class or method to a JSON schema.',
     long_description=long_description,

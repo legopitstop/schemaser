@@ -3,7 +3,7 @@ import typing
 import inspect
 import types
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 def to_json_type(instance, root:dict=None) -> dict:
     """
@@ -111,6 +111,7 @@ def to_schema(cls_or_func, root=None, skiparg:int=-1) -> dict:
                         for k,v in obj.items(): prop[k] = v # Merge with prop
                 else:
                     result['additionalProperties'] = to_json_type(v.annotation, result if root is None else root)
+            i+=1
 
         # Description
         if cls_or_func.__doc__ is not None: result['description'] = cls_or_func.__doc__
